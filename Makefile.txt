@@ -1,0 +1,34 @@
+#On defini la version de python qu'on utilise
+PYTHON = python3
+
+#Definition des fichiers à éxécuter
+FILES = test.py
+
+#On defini ensuite la commande par défaut à exécuter
+#quand on ecrit "make" dans le terminal
+.DEFAULT_GOAL = help
+
+
+help:
+	@echo "-----------HELP-----------"
+	@echo "type make format to format the code"
+	@echo "type make setup to setup the project"
+	@echo "type make run to run the project"
+	@echo "type make clean to cleant the project"
+#on ecrit @ pour pas que la commande ne se repete dans le terminal
+
+#$-->variable du Makefile
+#$-->variable du script
+
+setup:
+	@echo "Checking if the project files are generated..."
+	@echo "Coming soon..."
+
+format:
+	isort ${FILES}
+
+run:
+	${PYTHON} ${FILES}
+
+clean:
+	rm -r *./build
