@@ -24,7 +24,7 @@ class BT:
         
         br = mechanize.Browser()
         exist = True
-        for i in range(0,5):
+        for i in range(0,len(pageSuffixe)):
             exist = True
             try:
                 
