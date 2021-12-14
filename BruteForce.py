@@ -22,6 +22,7 @@ class BT:
     
     def SearchConsoleAdmin(self):
         
+        pageSuffixe = ["/admin/","/administrator/","/admin.php","/wp-login.php",":21"];
         br = mechanize.Browser()
         exist = True
         for i in range(0,len(pageSuffixe)):
