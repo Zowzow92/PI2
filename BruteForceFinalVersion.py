@@ -32,6 +32,12 @@ class BT:
         self.listpwd = itertools.permutations("i34U^hP-",8) 
     
     def SearchConsoleAdmin(self):
+        '''
+        Search for a console admin
+        
+        Returns:
+                Suffix URL where an admin console is available
+        '''
         pageSuffixe = ["/admin/","/administrator/","/admin.php","/wp-login.php",":21"];
         br = mechanize.Browser()
         exist = True
@@ -51,6 +57,15 @@ class BT:
             
     
     def CheckReponse(self,txt):
+        '''
+        Check if a word is inside a source code of a website page 
+         
+        Parameters:    
+            Server's request response
+            
+        Returns:
+                True or False 
+        '''
         # on Check si la contient un mot comme "incorrect", il faudrait une liste d'autres mots
         txt = btfs(txt,"lxml").get_text()
         txt= " ".join(item.strip().lower() for item in txt.split("\n")).split(" ")
@@ -60,6 +75,13 @@ class BT:
         return False
 
     def Attack(self):
+        '''
+        Creates web browsing and finds if a
+        LogIn form is secured or not
+            
+        Returns:
+                Print out success or errors
+        '''
         ssl._create_default_https_context = ssl._create_unverified_context
         br = mechanize.Browser()
         br.set_handle_equiv(True)
