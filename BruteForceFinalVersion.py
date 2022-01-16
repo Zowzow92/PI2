@@ -126,6 +126,10 @@ class BT:
             print("Site sécurisé")
 
 
-b = BT()
-b.Attack()
-b.SearchConsoleAdmin()
+end = ""
+while(end != "quit"):
+    
+    b = BT()
+    b.Attack()
+    b.SearchConsoleAdmin()
+    end = input("Write quit if you want to end the program : ")
