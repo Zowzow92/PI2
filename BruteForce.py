@@ -22,61 +22,22 @@ class BT:
     
     def SearchConsoleAdmin(self):
         
+        pageSuffixe = ["/admin/","/administrator/","/admin.php","/wp-login.php",":21"];
         br = mechanize.Browser()
         exist = True
-        try:
-            self.url = self.url + "/admin/"
-            reponse = br.open(self.url)
-        except:
-            print("Page /admin/ inaccessible")
-            exist = False
+        for i in range(0,len(pageSuffixe)):
+            exist = True
+            try:
+                
+                self.url = self.url + "".join(pageSuffixe[i])
+                
+                reponse = br.open(self.url)
+            except:
+                print("Page "+ "".join(pageSuffixe[i]) + " inaccessible")
+                exist = False
         
-        if(exist == True):
-            print("Page /admin/ accessible")
-        
-        exist = True
-        try:
-            self.url = self.url + "/administrator/"
-            reponse = br.open(self.url)
-        except:
-            print("Page /administrator/ inaccessible")
-            exist = False
-        
-        if(exist == True):
-            print("Page /administrator/ accessible")
-        
-        exist = True
-        try:
-            self.url = self.url + "/admin.php"
-            reponse = br.open(self.url)
-        except:
-            print("Page /admin.php inaccessible")
-            exist = False
-        
-        if(exist == True):
-            print("Page /admin.php accessible")
-            
-        exist = True
-        try:
-            self.url = self.url + "/wp-login.php"
-            reponse = br.open(self.url)
-        except:
-            print("Page /wp-login.php inaccessible")
-            exist = False
-        
-        if(exist == True):
-            print("Page /wp-login.php accessible")
-            
-        exist = True
-        try:
-            self.url = self.url + ":21"
-            reponse = br.open(self.url)
-        except:
-            print("Port FTP 21 inaccessible")
-            exist = False
-        
-        if(exist == True):
-            print("Port FTP 21 accessible")
+            if(exist == True):
+                print("Page " + "".join(pageSuffixe[i]) +" accessible")
             
     
     def CheckReponse(self,txt):
