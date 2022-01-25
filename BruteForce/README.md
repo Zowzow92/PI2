@@ -36,6 +36,6 @@ As we see the script tried credentials until the form disabled, wich means that 
   <img width="300" height="140" src="https://user-images.githubusercontent.com/58170434/150955155-5567eead-8a90-44b0-b849-db4f6eb275cf.jpg">
 </p>
 
-The script returns all admin paths tht are not blocked.
+The script returns all admin paths that are not blocked.
 
 
