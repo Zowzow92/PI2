@@ -6,6 +6,7 @@ has a secured Login and if a console is available.
 
 ## Usage
 ```
+#!/usr/bin/python3
 import BT
 
 bruteforce = BT()
