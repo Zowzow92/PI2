@@ -32,12 +32,6 @@ class BT:
         self.listpwd = itertools.permutations("i34U^hP-",8) 
     
     def SearchConsoleAdmin(self):
-        '''
-        Search for a console admin
-        
-        Returns:
-                Suffix URL where an admin console is available
-        '''
         pageSuffixe = ["/admin/","/administrator/","/admin.php","/wp-login.php",":21"];
         br = mechanize.Browser()
         exist = True
@@ -57,15 +51,6 @@ class BT:
             
     
     def CheckReponse(self,txt):
-        '''
-        Check if a word is inside a source code of a website page 
-         
-        Parameters:    
-            Server's request response
-            
-        Returns:
-                True or False 
-        '''
         # on Check si la contient un mot comme "incorrect", il faudrait une liste d'autres mots
         txt = btfs(txt,"lxml").get_text()
         txt= " ".join(item.strip().lower() for item in txt.split("\n")).split(" ")
@@ -75,13 +60,6 @@ class BT:
         return False
 
     def Attack(self):
-        '''
-        Creates web browsing and finds if a
-        LogIn form is secured or not
-            
-        Returns:
-                Print out success or errors
-        '''
         ssl._create_default_https_context = ssl._create_unverified_context
         br = mechanize.Browser()
         br.set_handle_equiv(True)
@@ -94,42 +72,42 @@ class BT:
             reponse = br.open(self.url)
         except :
             print("Url introuvable")
-            sys.exit()
+            return
 
-        try:
-            for x in combos:
-                br.set_response(reponse)
-                try:
-                    br.select_form( nr = 0 )
-                    br.form[self.usertag] = "user name"
-                    br.form[self.pwdtag] = ''.join(x)
-                    print("Checking user:",br.form[self.usertag]," password:",br.form[self.pwdtag])
-                except :
-                    print("Formulaire introuvable")
-                    break
-                reponse = br.submit()
-                # if(self.CheckReponse(reponse.read())):
-                # print("Incorrect")
-                print("Code reponse HTTP",reponse.code)
-                if(reponse.code/100>=5):
-                    print("Erreur client")
-                elif(reponse.code/100>=4):
-                    print("Erreur Serveur")
-                    break
-                elif(reponse.code/100>=2 and reponse.code/100<=3):
-                    print("Succes")
+        for x in combos:
+            br.set_response(reponse)
+            try:
+                br.select_form( nr = 0 )
+                br.form[self.usertag] = "user name"
+                br.form[self.pwdtag] = ''.join(x)
+                print("Checking user:",br.form[self.usertag]," password:",br.form[self.pwdtag])
+            except :
+                print("Formulaire introuvable")
+                if(compteur >= 3):
+                    print("Site sécurisé")
+                return
+            reponse = br.submit()
+            # if(self.CheckReponse(reponse.read())):
+            # print("Incorrect")
+            print("Code reponse HTTP",reponse.code)
+            if(reponse.code/100>=5):
+                print("Erreur client")
+            elif(reponse.code/100>=4):
+                print("Erreur Serveur")
+                return
+            elif(reponse.code/100>=2 and reponse.code/100<=3):
+                print("Succes")
                         
-                compteur+=1
-                if(compteur == 4):
-                    break
-        except :
-            print("Site sécurisé")
-
-
-end = ""
-while(end != "quit"):
+            compteur+=1
+            if(compteur == 5):
+                print("Site Non protégé")
+                return
+        
+if(__name__ == "__main__"):
+    end = ""
+    while(end != "quit"):
     
-    b = BT()
-    b.Attack()
-    b.SearchConsoleAdmin()
-    end = input("Write quit if you want to end the program : ")
+        b = BT()
+        b.Attack()
+        b.SearchConsoleAdmin()
+        end = input("Write quit if you want to end the program : ")
