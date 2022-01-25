@@ -7,7 +7,7 @@ has a secured Login and if a console is available.
 ## Usage
 ```
 #!/usr/bin/python3
-import BT
+from BruteForceFinalVersion.py import BT
 
 bruteforce = BT()
 bruteforce.Attack() // To check security Login
