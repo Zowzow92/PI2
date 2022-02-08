@@ -4,6 +4,13 @@
 This script can be used in order to chek if a website
 has a secured Login and if a console is available.
 
+
+## Install
+
+```
+pip install -r /path/to/requirements.txt
+```
+
 ## Usage
 ```
 #!/usr/bin/python3
