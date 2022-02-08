@@ -2,6 +2,4 @@
 
 mechanize==0.4.5
 itertools==4.2.0
-ssl
 beautifulSoup4==4.9.3
-sys
