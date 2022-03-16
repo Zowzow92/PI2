@@ -15,8 +15,8 @@ pip install -r /path/to/requirements.txt
 #!/usr/bin/python3
 from failleXSS.py import scan_xss
 
-#url=input("Entrez l'url:") # URL input by user 
-url="https://xss-game.appspot.com/level2/frame"
+url=input("Entrez l'url:") # URL input by user 
+#url="https://xss-game.appspot.com/level2/frame"
 scan_xss(url)
 
 ```
