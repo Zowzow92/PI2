@@ -21,6 +21,6 @@ We have to input the url link and add the fuzz parameter '{fuzz}'.</br>
 
 ## Results
 ```
-[+]SUCCESS - LFI vuln found with ../etc/passwd!"
+[+]SUCCESS - LFI vuln found with ../etc/passwd!
 ```
 
