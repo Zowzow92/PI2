@@ -2,7 +2,7 @@ import requests
 import sys
 
 
-def main():
+def LFI():
 	if len(sys.argv) < 2:
 		sys.exit("[-]ERROR - Missing target URL")
 	elif not '{fuzz}' in sys.argv[1]:
@@ -22,4 +22,4 @@ def main():
 	print("[+]INFO - Scan finished")
 
 if __name__ == '__main__':
-	main()
+	LFI()
