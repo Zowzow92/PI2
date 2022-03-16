@@ -23,8 +23,15 @@ scan_xss(url)
 <p align="center">
 </p>
 
-We have to input the url link, and the sentence send by the server when you uploaded an inccorrect file.
+We have to input the url link.
 
+## Result
+
+<p align="center">
+  ![xss](https://user-images.githubusercontent.com/84924786/158654535-a0eac640-7e29-461a-9f81-18e4fd1f5f35.png)
+</p>
+
+As we can see, the script searches for forms in the given url and injects payloads in those forms until one works.
 
 
 
