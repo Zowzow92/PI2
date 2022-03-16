@@ -40,6 +40,6 @@ The script searches for forms in the given url and injects payloads in those for
 </p>
 
 ```diff
-! Warning : As you might see, Stored and DOM Based xss are not supported here.
+! Warning : As you may notice, Stored and DOM Based xss are not supported here.
 ```
 
