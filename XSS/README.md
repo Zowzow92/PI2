@@ -25,15 +25,6 @@ scan_xss(url)
 
 We have to input the url link, and the sentence send by the server when you uploaded an inccorrect file.
 
-## Results
-
-### Attack
-<p align="center">
-  
-</p>
-
-<p align="center">
-</p>
 
 
 
