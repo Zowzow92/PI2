@@ -27,11 +27,19 @@ We have to input the url link.
 
 ## Result
 
+The script searches for forms in the given url and injects payloads in those forms until one works.
+
+# Reflected Xss found
 <p align="center">
-  <img width="400" height="240" src="https://user-images.githubusercontent.com/84924786/158654535-a0eac640-7e29-461a-9f81-18e4fd1f5f35.png">
+  <img width="600" height="300" src="https://user-images.githubusercontent.com/84924786/158654535-a0eac640-7e29-461a-9f81-18e4fd1f5f35.png">
 </p>
 
-As we can see, the script searches for forms in the given url and injects payloads in those forms until one works.
+# Reflected Xss not found
+<p align="center">
+  <img width="600" height="300" src="https://user-images.githubusercontent.com/84924786/158656160-bc55318d-a378-4241-a847-4f07c05b51a3.png">
+</p>
+
+
 
 
 
