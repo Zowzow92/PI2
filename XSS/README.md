@@ -27,9 +27,8 @@ We have to input the url link.
 
 ## Result
 
-<p align="center">
-  <img width="400" height="240" src="![xss](https://user-images.githubusercontent.com/84924786/158654535-a0eac640-7e29-461a-9f81-18e4fd1f5f35.png)">
-</p>
+<img width="400" height="240" src="![xss](https://user-images.githubusercontent.com/84924786/158654535-a0eac640-7e29-461a-9f81-18e4fd1f5f35.png)">
+
 
 As we can see, the script searches for forms in the given url and injects payloads in those forms until one works.
 
