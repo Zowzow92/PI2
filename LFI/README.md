@@ -16,8 +16,8 @@ pip install -r /path/to/requirements.txt
 ```
 python3 LFI.py http://127.0.0.1/index.php?image={fuzz}
 ```
-We have to input the url link and after the parameter add '{fuzz}'.
-'{fuzz}' will be replace by payloads as '/etc/passwd'.
+We have to input the url link and add the fuzz parameter '{fuzz}'.
+'{fuzz}' will be replaced by payloads as '/etc/passwd'.
 
 ## Results
 ```
