@@ -25,7 +25,7 @@ def get_all_forms(url):
 ############################################################################
 
 """
-return all information about the Html form
+return all the informations about the Html form
 """
 def get_form_details(form):
    
@@ -48,8 +48,8 @@ def get_form_details(form):
 """
     Submits a form given in "get_form_details()"
     Params:
-        form_details (list): a dictionary that contain form information
-        url (str): the original URL that contain that form
+        form_details (list): a dictionary that contains the form's informations
+        url (str): the original URL that contains that form
         value (str): the script we want to execute
     Returns the HTTP Response after form submission
 """
@@ -110,13 +110,13 @@ def scan_xss(url):
                           #have to continue testing the other scripts
                           
     if not is_vulnerable:
-        print(colored("\nXSS vulnerability not found","green"))
+        print(colored("\nReflected XSS vulnerability not found","green"))
     
     return is_vulnerable
 
 
 ####################################TEST########################################
 if __name__ == "__main__":
-    #url=input("Entrez l'url:") 
-    url="https://xss-game.appspot.com/level2/frame"
+    url=input("Entrez l'url:") 
+    #url="https://xss-game.appspot.com/level2/frame"
     scan_xss(url)
