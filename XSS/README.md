@@ -1,7 +1,7 @@
 # XSS Scanner
 
 This script can be used in order to chek if a website
-has an reflected XSS vulnerability
+has reflected XSS vulnerability
 
 
 ## Install
