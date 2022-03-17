@@ -2,6 +2,7 @@ import os
 import LFI.py 
 import BruteForce.py
 import FailleXSS.py
+import fuxploider.py
 
 
 def AffichageMenu():
@@ -23,6 +24,15 @@ def AffichageXSS():
 
 def AffichageLFI():
     LFI.LFI()
+  
+def Fuxploider():
+    print("Sasir l'url:")
+    url = input()
+    #[!] Attention - Si tout les types de fichiers sont testés et valide, c'est certainement que le not-regex qui a mal été saisit
+    print("Type the \'not-regex\' (Exemple: \"wrong file type\") Attention à bien le message d'erreur saisir"
+    nregex = input()
+    cmd = 'python3 fuxploider.py --url {} --not-regex \"{}\"'.format(url,nregex)
+    os.system(cmd)
 
 def selectScan(slct):
     
@@ -42,7 +52,7 @@ while fin == 0:
     if(slct == 2):
         AffichageBruteForce()
     if(slct == 3):
-        AffichageBruteForce()
+        Fuxploider()
     if(slct == 4):
         AffichageLFI()
     if(slct == 5):
