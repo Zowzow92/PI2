@@ -13,13 +13,21 @@ from termcolor import colored
 
 
 
-"""
-Given an url, it returns all forms from the HTML content
-"""
+
 def get_all_forms(url):
+    """
+    Given an url, it returns all forms from the HTML content
     
-    """" get the page source code"""
-    soup = bs(requests.get(url).content, "html.parser")
+    Parameter :
+     - URL of the page 
+     
+     Return :
+     - Forms founds in the page
+     
+    """
+    
+    #get the page source code
+    soup = bs(requests.get(url).content, "html.parser") 
     return soup.find_all("form")
 
 ############################################################################
@@ -28,7 +36,17 @@ def get_all_forms(url):
 return all information about the Html form
 """
 def get_form_details(form):
-   
+    '''
+    Given a form, it returns all informations about the form
+    
+    Parameter :
+    - form
+    
+    Return :
+    - attributes of the from
+    
+    '''
+
     details = {}
     # get the form action (target url/redirection url)
     details["action"] = form.attrs.get("action").lower()
@@ -45,16 +63,18 @@ def get_form_details(form):
 
 ############################################################################
 
-"""
+
+def submit_form(form_details, url, value):
+    """
     Submits a form given in "get_form_details()"
+    
     Params:
         form_details (list): a dictionary that contains the form's informations
         url (str): the original URL that contains that form
         value (str): the script we want to execute
-    Returns the HTTP Response after form submission
-"""
-def submit_form(form_details, url, value):
     
+    Returns the HTTP Response after form submission
+    """
     # construct the full URL (if the url provided in action is relative)
     target_url = urljoin(url, form_details["action"])
     # get the inputs
@@ -79,11 +99,16 @@ def submit_form(form_details, url, value):
 
 ############################################################################
 
-"""
-    Given an url, it prints all the vulnerable forms founded
-"""
+
 def scan_xss(url):
+    """
     
+    Given an url, it prints all the vulnerable forms founded
+    We send payloads in forms, and then we check the response.
+    We try to find in the page source if there is the payloads
+    that was send just before.
+    
+    """
     is_vulnerable=False
     payloadLength=len(open('xssPayload.txt','r',encoding="utf-8").readlines())
     
