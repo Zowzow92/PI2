@@ -15,7 +15,7 @@ from termcolor import colored
 
 
 def get_all_forms(url):
-    """
+    '''
     Given an url, it returns all forms from the HTML content
     
     Parameter :
@@ -24,7 +24,7 @@ def get_all_forms(url):
      Return :
      - Forms founds in the page
      
-    """
+    '''
     
     #get the page source code
     soup = bs(requests.get(url).content, "html.parser") 
@@ -65,7 +65,7 @@ def get_form_details(form):
 
 
 def submit_form(form_details, url, value):
-    """
+    '''
     Submits a form given in "get_form_details()"
     
     Params:
@@ -74,7 +74,7 @@ def submit_form(form_details, url, value):
         value (str): the script we want to execute
     
     Returns the HTTP Response after form submission
-    """
+    '''
     # construct the full URL (if the url provided in action is relative)
     target_url = urljoin(url, form_details["action"])
     # get the inputs
@@ -101,14 +101,14 @@ def submit_form(form_details, url, value):
 
 
 def scan_xss(url):
-    """
+    '''
     
     Given an url, it prints all the vulnerable forms founded
     We send payloads in forms, and then we check the response.
     We try to find in the page source if there is the payloads
     that was send just before.
     
-    """
+    '''
     is_vulnerable=False
     payloadLength=len(open('xssPayload.txt','r',encoding="utf-8").readlines())
     
