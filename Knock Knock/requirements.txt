@@ -1,0 +1,9 @@
+mechanize==0.4.5
+itertools==4.2.0
+beautifulSoup4==4.9.3
+requests==2.27.1
+tqdm==4.63.0
+pprint==0.4.0
+urllib3==1.26.9
+termcolor==1.1.0
+coloredlogs
