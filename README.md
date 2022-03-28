@@ -7,10 +7,10 @@ automatise les tests de failles de sécurité sur des web app.
 Dans chaque dossier vous trouverez un README avec le fichier d'installation 'requirments.py' <br/>
 
 # Utilisation
-'''
+```
 #Ouvre un Menu pour selectionner la faille
 python3 __init__.py
-'''
+```
 
 
 
