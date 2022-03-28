@@ -11,7 +11,6 @@ pip install -r /path/to/requirements.txt
 
 # Utilisation
 ```
-#Ouvre un Menu pour selectionner la faille
 python3 __init__.py
 ```
 
