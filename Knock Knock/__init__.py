@@ -26,7 +26,7 @@ def AffichageLFI():
     LFI.LFI()
   
 def Fuxploider():
-    print("Sasir l'url:")
+    print("Saisir l'url:")
     url = input()
     #[!] Attention - Si tout les types de fichiers sont testés et valide, c'est certainement que le not-regex qui a mal été saisit
     print("Type the \'not-regex\' (Exemple: \"wrong file type\") Attention à bien le message d'erreur saisir"
