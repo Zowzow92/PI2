@@ -14,8 +14,8 @@ def LFI(URL):
 
 	for payload in payloads:
 		target = selected_target.replace('{fuzz}', payload)
-		requests = requests.get(target)
-		if b"root:x:0" in requests.content:
+		req = requests.get(target)
+		if b"root:x:0" in req.content:
 			print("[+]SUCCESS - LFI vuln found with {}!".format(payload))
 		else:
 			pass
