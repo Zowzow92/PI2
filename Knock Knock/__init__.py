@@ -1,8 +1,8 @@
 import os
-import LFI.py 
-import BruteForce.py
-import FailleXSS.py
-import fuxploider.py
+import LFI
+import BruteForce
+import FailleXSS
+import fuxploider
 
 
 def AffichageMenu():
