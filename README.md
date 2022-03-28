@@ -4,7 +4,10 @@ Le projet est de réaliser un logiciel en python qui
 automatise les tests de failles de sécurité sur des web app.
 
 # Installation
-Dans chaque dossier vous trouverez un README avec le fichier d'installation 'requirments.py' <br/>
+Dans chaque dossier vous trouverez un README avec le fichier d'installation 'requirments.txt' <br/>
+```
+pip install -r /path/to/requirements.txt
+```
 
 # Utilisation
 ```
