@@ -29,7 +29,7 @@ def Fuxploider():
     print("Saisir l'url:")
     url = input()
     #[!] Attention - Si tout les types de fichiers sont testés et valide, c'est certainement que le not-regex qui a mal été saisit
-    print("Type the \'not-regex\' (Exemple: \"wrong file type\") Attention à bien le message d'erreur saisir"
+    print("Type the \'not-regex\' (Exemple: \"wrong file type\") Attention à bien le message d'erreur saisir")
     nregex = input()
     cmd = 'python3 fuxploider.py --url {} --not-regex \"{}\"'.format(url,nregex)
     os.system(cmd)
